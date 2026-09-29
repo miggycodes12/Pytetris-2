@@ -106,7 +106,7 @@ def main():
 
     }
 
-    new_board = classes.Board(10, 20, 30) # Standard NES Tetris uses 10x20 grid
+    new_board = classes.Board(10, 20, 45x) # Standard NES Tetris uses 10x20 grid
 
     pygame.init()
     screen = pygame.display.set_mode((1600, 900))
@@ -120,6 +120,9 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
 
+        screen.fill((0, 0, 0))
+        new_board.draw_board(screen)
+        
         pygame.display.flip()
         clock.tick(FPS)
 

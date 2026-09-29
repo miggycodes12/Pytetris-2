@@ -42,11 +42,12 @@ class Board:
 
             self.grid.append(row)
 
-    def draw_board(self, screen: pygame.Surface):
+    def draw_board(self, screen: pygame.Surface, offset_x=0, offset_y=0):
         pygame.draw.rect(
             screen,
             (255, 255, 255),
-            (0, 0, self.width * self.scale, self.height * self.scale)
+            (offset_x, offset_y, self.width * self.scale, self.height * self.scale),
+            1
         )
 
 
