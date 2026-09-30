@@ -102,11 +102,31 @@ def main():
                 [1, 1],
                 [1, 0]
             ]
+        },
+
+        "I_PIECE": {
+            "rotation_1": [
+                [1, 1, 1, 1]
+            ],
+
+            "rotation_2": [
+                [1],
+                [1],
+                [1],
+                [1]
+            ]
+        },
+
+        "O_PIECE": {
+            "rotation_1": [
+                [1, 1],
+                [1, 1]
+            ]
         }
 
     }
 
-    new_board = classes.Board(10, 20, 45x) # Standard NES Tetris uses 10x20 grid
+    new_board = classes.Board(10, 20, 45) # Standard NES Tetris uses 10x20 grid
 
     pygame.init()
     screen = pygame.display.set_mode((1600, 900))
@@ -121,7 +141,7 @@ def main():
                 running = False
 
         screen.fill((0, 0, 0))
-        new_board.draw_board(screen)
+        new_board.draw_board(screen, offset_x=350)
         
         pygame.display.flip()
         clock.tick(FPS)
